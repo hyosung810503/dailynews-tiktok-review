@@ -1,2 +1,3 @@
-# dailynews-tiktok-review
-Dailynews TikTok Publisher review and verification site
+# Dailynews Social Publisher
+
+Official review and verification site for the Dailynews Social Publisher TikTok integration.
