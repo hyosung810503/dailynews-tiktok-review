@@ -4,74 +4,112 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Dailynews Social Publisher</title>
-  <meta name="description" content="Official review site for Dailynews Social Publisher and its TikTok publishing integration">
+  <meta name="description" content="Dailynews Social Publisher helps authorized newsroom and publishing users prepare and publish short-form video content from a controlled desktop workflow.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">Dailynews Social Publisher</a>
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a href="#features">Features</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#security">Security</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+  </div>
+</header>
 
-<h1>Dailynews Social Publisher</h1>
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Short-form publishing workflow by Dailynews</p>
+    <h1>Prepare, review, and publish short-form news video from one controlled workflow.</h1>
+    <p class="lead">
+      Dailynews Social Publisher is a desktop-assisted publishing service for authorized newsroom and publishing users. It helps users prepare vertical news videos, review publishing information, connect an authorized social account, and submit approved content through supported platform integrations.
+    </p>
+    <div class="hero-actions">
+      <a class="button" href="#workflow">See the publishing workflow</a>
+      <a class="button secondary" href="https://www.idailynews.co.kr/">Visit Dailynews</a>
+    </div>
+  </section>
 
-<p>
-Dailynews Social Publisher is a desktop publishing tool operated by
-Dailynews, a Korean digital news media organization.
-</p>
+  <section id="features" class="section">
+    <h2>What the service does</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Content preparation</h3>
+        <p>Users prepare Dailynews short-form video assets, captions, hashtags, and publication metadata before any platform submission.</p>
+      </article>
+      <article class="card">
+        <h3>Account authorization</h3>
+        <p>A supported social account must be explicitly authorized before the service can access permitted account information or publish content.</p>
+      </article>
+      <article class="card">
+        <h3>Publishing controls</h3>
+        <p>Before publishing, the service presents the target account and available publishing settings so the user can confirm the intended submission.</p>
+      </article>
+      <article class="card">
+        <h3>Publication tracking</h3>
+        <p>The service stores publication status and identifiers needed to prevent duplicate submissions and support operational auditing.</p>
+      </article>
+    </div>
+  </section>
 
-<p>
-The service is used to publish vertical short-form news videos
-created by Dailynews to TikTok accounts that have explicitly
-authorized the application.
-</p>
+  <section id="workflow" class="section">
+    <h2>Publishing workflow</h2>
+    <ol class="steps">
+      <li><strong>Prepare.</strong> A vertical news video and caption are prepared in the Dailynews publishing system.</li>
+      <li><strong>Authorize.</strong> The user connects an account through the platform authorization flow and grants only the permissions required for publishing.</li>
+      <li><strong>Review.</strong> The service retrieves creator information and supported privacy options, then displays the target account and publishing settings.</li>
+      <li><strong>Confirm.</strong> The user confirms the publication request for the selected video.</li>
+      <li><strong>Publish and track.</strong> The approved video is transferred through the platform Content Posting API, and the resulting publication status is recorded.</li>
+    </ol>
+  </section>
 
-<nav>
-  <a href="terms.html">Terms of Service</a>
-  <a href="privacy.html">Privacy Policy</a>
-  <a href="https://www.idailynews.co.kr/">Dailynews</a>
-</nav>
+  <section class="section split">
+    <div>
+      <h2>Platform integration</h2>
+      <p>
+        For TikTok publishing, Dailynews Social Publisher uses TikTok Login Kit for account authorization and the Content Posting API for authorized video publishing. The basic-profile permission is used only to identify the authorized account in the publishing interface, and the publishing permission is used only when an authorized user submits a video for publication.
+      </p>
+      <p>
+        The service does not publish to an account that has not authorized the application. Available privacy settings are obtained from the platform for the authorized creator before publication.
+      </p>
+    </div>
+    <aside class="info-box">
+      <h3>Permissions used</h3>
+      <ul>
+        <li><code>user.info.basic</code> — identify the authorized account.</li>
+        <li><code>video.publish</code> — submit an approved video to the authorized account.</li>
+      </ul>
+    </aside>
+  </section>
 
-<h2>How the integration works</h2>
+  <section id="security" class="section">
+    <h2>Security and user control</h2>
+    <p>
+      Authorization credentials are handled by systems controlled by Dailynews and are not intentionally exposed in public pages or published content. An authorized account owner can revoke application access using the platform's account controls. Dailynews may also remove locally stored authorization information when the connection is no longer required.
+    </p>
+  </section>
 
-<p>
-Dailynews creates its own short-form news video content.
-After a TikTok account authorizes the application through TikTok
-Login Kit, the application may transfer an approved video file
-to TikTok using the Content Posting API.
-</p>
-
-<p>
-Before publishing, the integration queries creator information,
-displays available privacy options supplied by TikTok, and requires
-an explicit publishing confirmation. Publication is made only to an
-authorized TikTok account.
-</p>
-
-<h2>TikTok API usage</h2>
-
-<p>
-The integration uses TikTok account authorization, basic creator
-information, and the Content Posting API for authorized video
-publishing. Video files are transferred from the Dailynews desktop
-publishing system using FILE_UPLOAD.
-</p>
-
-<h2>Operator</h2>
-
-<p>
-Dailynews<br>
-Website:
-<a href="https://www.idailynews.co.kr/">
-https://www.idailynews.co.kr/
-</a><br>
-Email:
-<a href="mailto:dailynewsisa@naver.com">
-dailynewsisa@naver.com
-</a>
-</p>
-
-<footer>
-Dailynews Social Publisher
-</footer>
-
+  <section class="section contact">
+    <h2>Operator and support</h2>
+    <p><strong>Operator:</strong> Dailynews</p>
+    <p><strong>Official website:</strong> <a href="https://www.idailynews.co.kr/">https://www.idailynews.co.kr/</a></p>
+    <p><strong>Support:</strong> <a href="mailto:dailynewsisa@naver.com">dailynewsisa@naver.com</a></p>
+  </section>
 </main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© 2026 Dailynews. Dailynews Social Publisher.</span>
+    <nav aria-label="Legal links">
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://www.idailynews.co.kr/">Dailynews</a>
+    </nav>
+  </div>
+</footer>
 </body>
 </html>
